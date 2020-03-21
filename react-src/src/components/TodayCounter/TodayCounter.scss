@@ -1,0 +1,67 @@
+#todayCounter {
+  margin-top: 1em;
+
+  .ui.loader.active {
+    display: inline-block;
+    font-size: .2em;
+  }
+
+  h1.ui.header {
+    font-size: 6em;
+    color: #2171B5;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h2.ui.header {
+    margin-block-start: 0;
+    color: #4292c6;
+    width: 100%;
+  }
+
+  h3.ui.header {
+    margin-block-start: 0;
+    margin-bottom: 0;
+    color: #21ba45;
+    width: 100%;
+  }
+
+  h5.ui.header {
+    margin-block-start: 0;
+    color: #6baed6;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #todayCounter {
+    h1.ui.header {
+      font-size: 3em;
+    }
+
+    .ui.large.loader {
+      width: 2em;
+      height: 2em;
+      margin-top: .4em;
+      margin-bottom: .4em;
+      font-size: .6em;
+    }
+
+    h2.ui.header {
+      font-size: 1.3em;
+      margin-block-start: 0;
+      margin-left: .8em;
+      margin-right: .8em;
+      width: 100%;
+    }
+
+    h3.ui.header {
+      width: 100%;
+    }
+
+    h5.ui.header {
+      margin-block-start: 0;
+      width: 100%;
+    }
+  }
+}

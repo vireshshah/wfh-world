@@ -1,0 +1,19 @@
+#wfhButton {
+}
+#wfhMessage {
+  font-size: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+  #wfhMessage {
+    font-size: 0.8em;
+  }
+
+  #wfhButton {
+    button {
+      font-size: 1em;
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+  }
+}

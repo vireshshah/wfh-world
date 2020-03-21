@@ -11,7 +11,12 @@ const config = require('./config/db');
 mongoose.Promise = global.Promise;
 
 // Connect to the database
-mongoose.connect(config.db);
+mongoose.connect(config.db, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true
+});
 let db = mongoose.connection;
 
 db.on('open', () => {
@@ -58,24 +63,11 @@ const server = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-// Set up socket.io
-const io = socket(server);
-let online = 0;
+// // Set up socket.io
+// const io = socket(server);
+// io.set('heartbeat timeout', 60000); 
+// io.set('heartbeat interval', 25000);
 
-io.on('connection', (socket) => {
-  online++;
-  console.log(`Socket ${socket.id} connected.`);
-  console.log(`Online: ${online}`);
-  io.emit('visitor enters', online);
-
-  socket.on('add', data => socket.broadcast.emit('add', data));
-  socket.on('update', data => socket.broadcast.emit('update', data));
-  socket.on('delete', data => socket.broadcast.emit('delete', data));
-
-  socket.on('disconnect', () => {
-    online--;
-    console.log(`Socket ${socket.id} disconnected.`);
-    console.log(`Online: ${online}`);
-    io.emit('visitor exits', online);
-  });
-});
+// io.on('connection', (socket) => {
+//   socket.on('update', data => socket.broadcast.emit('update', data));
+// });

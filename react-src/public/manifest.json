@@ -1,10 +1,10 @@
 {
-  "short_name": "MERN CRUD",
-  "name": "MERN CRUD",
+  "short_name": "WFH World",
+  "name": "WFH World",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "192x192",
+      "sizes": "48x48",
       "type": "image/png"
     }
   ],
