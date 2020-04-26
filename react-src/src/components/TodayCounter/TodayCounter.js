@@ -11,7 +11,7 @@ const TodayCounter = props => {
   const [totalCount, setTotalCount] = useState();
 
   async function fetchData() {
-    const startDate =  moment().subtract(30,'d').format("YYYY-MM-DDT00:00:00.000") + "Z";
+    const startDate =  moment().subtract(365,'d').format("YYYY-MM-DDT00:00:00.000") + "Z";
     const endDate = moment().add(1, 'd').format("YYYY-MM-DDT00:00:00.000") + "Z";
     const response = await axios.get(
       `${props.server}/api/users/count/${startDate}/${endDate}`

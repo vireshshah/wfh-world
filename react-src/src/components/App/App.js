@@ -49,7 +49,7 @@ class App extends Component {
   };
 
   fetchUsers() {
-    const startDate =  moment().subtract(30,'d').format("YYYY-MM-DDT00:00:00.000") + "Z";
+    const startDate =  moment().subtract(365,'d').format("YYYY-MM-DDT00:00:00.000") + "Z";
     const endDate =  moment().add(1, 'd').format("YYYY-MM-DDT00:00:00.000") + "Z";
     axios
       .get(`${this.server}/api/users/${startDate}/${endDate}`)
